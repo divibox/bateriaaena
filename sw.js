@@ -1,9 +1,10 @@
-const CACHE_NAME = 'bomberos-test-v1';
+const CACHE_NAME = 'bomberos-test-v2';
+const BASE = '/bateriaaena/';
 const FILES = [
-  './',
-  './index.html',
-  './questions.js',
-  './manifest.json',
+  BASE,
+  BASE + 'index.html',
+  BASE + 'questions.js',
+  BASE + 'manifest.json',
   'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap'
 ];
 
@@ -30,3 +31,4 @@ self.addEventListener('fetch', e => {
     caches.match(e.request).then(cached => cached || fetch(e.request).catch(() => cached))
   );
 });
+
